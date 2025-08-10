@@ -716,7 +716,7 @@ export default function Page() {
       const formData = new FormData();
       formData.append("file", file);
       const { data } = await axios.post<ApiResponse>(
-        "http://localhost:8000/parse-resume",
+        `${process.env.NEXT_PUBLIC_API_URL}/parse-resume`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
